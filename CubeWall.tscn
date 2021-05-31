@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://materials/magicianPink.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 16, 16, 16 )
+
+[node name="CubeWall" type="MeshInstance"]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
