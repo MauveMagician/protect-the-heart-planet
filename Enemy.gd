@@ -3,13 +3,14 @@ extends PathFollow
 export (int) var heartDamage = 1000
 export (int) var towerDamage = 1
 export (int) var life = 5
+export (int) var value = 1
 export (float) var moveSpeed = 0.004
 
 var targetable = false
 
 func die():
 	var gameScene = get_parent().get_parent()
-	gameScene.change_resource(gameScene.resource + 1)
+	gameScene.change_resource(gameScene.resource + self.value)
 	self.queue_free()
 
 func take_damage(value):

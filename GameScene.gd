@@ -13,3 +13,7 @@ func change_resource(value):
 func change_wave(value):
 	self.wave = value
 	emit_signal("wave_changed")
+
+func heartDefeated():
+	get_tree().paused = true
+	$UI/LoseScreen.visible = true

@@ -2,6 +2,7 @@ extends Control
 
 var placing = false
 var placing_tower = null
+var current_stage = Preloader.stages[0]
 
 onready var camera = get_parent().get_node("CameraPivot/MainCamera")
 
@@ -53,3 +54,4 @@ func _on_GameScene_wave_changed():
 		$WaveMoneyRect/WaveLabel.text = "L" + String(get_parent().wave)
 	else:
 		$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)
+

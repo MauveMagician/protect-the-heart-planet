@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Protect the Heart Planet"
-run/main_scene="res://GameScene.tscn"
+run/main_scene="res://StartScreen.tscn"
 config/icon="res://sprites/heartPlanetCuore.png"
 
 [autoload]
