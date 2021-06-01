@@ -10,7 +10,7 @@ func _ready():
 	$TowerName.text = dummy_tower.towerName
 	self.towerCost = dummy_tower.cost
 	$TowerCost.text = "$" + String(dummy_tower.cost)
-	$UnitSpr.texture = dummy_tower.get_node("Sprite3D").texture
+	$UnitSpr.texture = dummy_tower.get_node("Thumbnail").texture
 	call_deferred("queue_free",dummy_tower)
 
 func button_disable():

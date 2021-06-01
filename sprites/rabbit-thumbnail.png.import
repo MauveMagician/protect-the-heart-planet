@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rabit_walk_anim_strip_6.png-c4de56afe377d87ae94f851afd1911a0.stex"
+path="res://.import/rabbit-thumbnail.png-771488bc8e4816a0ee0d61473b8c5f38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rabit_walk_anim_strip_6.png"
-dest_files=[ "res://.import/rabit_walk_anim_strip_6.png-c4de56afe377d87ae94f851afd1911a0.stex" ]
+source_file="res://sprites/rabbit-thumbnail.png"
+dest_files=[ "res://.import/rabbit-thumbnail.png-771488bc8e4816a0ee0d61473b8c5f38.stex" ]
 
 [params]
 

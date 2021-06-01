@@ -44,7 +44,7 @@ func _input(event):
 
 func _on_GameScene_resource_changed():
 	if get_parent().resource > 999:
-		$WaveMoneyRect/WaveLabel.text = "$" + String(get_parent().resource)
+		$WaveMoneyRect/MoneyLabel.text = "$" + String(get_parent().resource)
 	else:
 		$WaveMoneyRect/MoneyLabel.text = "MONEY " + String(get_parent().resource)
 
