@@ -5,6 +5,10 @@ var placing_tower = null
 
 onready var camera = get_parent().get_node("CameraPivot/MainCamera")
 
+func _ready():
+	$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)
+	$WaveMoneyRect/MoneyLabel.text = "MONEY " + String(get_parent().resource)
+
 func place_mode(tower):
 	$CardContainer.visible = false
 	for c in $CardContainer.get_children():
@@ -33,4 +37,19 @@ func _input(event):
 				var new_tower = placing_tower.instance()
 				get_parent().add_child(new_tower)
 				new_tower.global_transform.origin = Vector3(result.position.x,4,result.position.z)
+				get_parent().change_resource(get_parent().resource - new_tower.cost)
 			self.normal_mode()
+		if event is InputEventMouseButton and event.is_pressed() and event.button_index != 1:
+			self.normal_mode()
+
+func _on_GameScene_resource_changed():
+	if get_parent().resource > 999:
+		$WaveMoneyRect/WaveLabel.text = "$" + String(get_parent().resource)
+	else:
+		$WaveMoneyRect/MoneyLabel.text = "MONEY " + String(get_parent().resource)
+
+func _on_GameScene_wave_changed():
+	if get_parent().wave > 99:
+		$WaveMoneyRect/WaveLabel.text = "L" + String(get_parent().wave)
+	else:
+		$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)

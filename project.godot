@@ -15,9 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="May-game"
+config/name="Protect the Heart Planet"
 run/main_scene="res://GameScene.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/heartPlanetCuore.png"
 
 [autoload]
 

@@ -8,7 +8,7 @@ var attackTarget = null
 var canAttack = true
 
 func attack():
-	if is_instance_valid(attackTarget) and attackTarget and attackTarget.get_class() == "Enemy" and canAttack and attackTarget.get_node("EnemyArea") in $AttackRange.get_overlapping_areas():
+	if is_instance_valid(attackTarget) and attackTarget and attackTarget.get_class() == "Enemy" and canAttack and attackTarget.get_node("EnemyArea") in $AttackRange.get_overlapping_areas() and attackTarget.targetable:
 		var newBullet = Preloader.assets[0].instance()
 		newBullet.velocity = (attackTarget.global_transform.origin - self.global_transform.origin).normalized()
 		newBullet.transform = self.global_transform
@@ -37,11 +37,11 @@ func _on_AttackRange_area_exited(area):
 			if t.get_class() == "Enemy":
 				if not new_target and t.life < new_target.life:
 					new_target = t
-					print(t)
 		if new_target:
 			self.attackTarget = new_target
 		else:
 			self.attackTarget = null
+		print(self.attackTarget)
 
 func _on_AttackTimer_timeout():
 	self.canAttack = true

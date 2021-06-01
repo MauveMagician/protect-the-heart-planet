@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Card.gd" type="Script" id=1]
+[ext_resource path="res://Card.tres" type="Theme" id=2]
+[ext_resource path="res://TowerPocket.gd" type="Script" id=3]
+[ext_resource path="res://Tower.tscn" type="PackedScene" id=4]
+
+[node name="Card" type="NinePatchRect"]
+margin_left = 272.0
+margin_right = 368.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 96, 104 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.25098, 0.25098, 0.25098, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TowerName" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 28.0
+theme = ExtResource( 2 )
+text = "Tower"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TowerCost" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 76.0
+margin_bottom = 104.0
+theme = ExtResource( 2 )
+text = "$10"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitSpr" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 32, 32 )
+rect_scale = Vector2( 0.5, 0.5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TowerPocket" type="Node" parent="."]
+script = ExtResource( 3 )
+tower = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

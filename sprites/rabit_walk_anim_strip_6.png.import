@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heartPlanetCuore - White.png-31019547cbbbaf52a8f793993e55c2b5.stex"
+path="res://.import/rabit_walk_anim_strip_6.png-c4de56afe377d87ae94f851afd1911a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/heartPlanetCuore - White.png"
-dest_files=[ "res://.import/heartPlanetCuore - White.png-31019547cbbbaf52a8f793993e55c2b5.stex" ]
+source_file="res://sprites/rabit_walk_anim_strip_6.png"
+dest_files=[ "res://.import/rabit_walk_anim_strip_6.png-c4de56afe377d87ae94f851afd1911a0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

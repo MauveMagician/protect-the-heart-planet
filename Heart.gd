@@ -1,7 +1,6 @@
 extends StaticBody
 
 export (int) var heartLife = 10000
-export (int) var energy = 20
 
 func UpdateLife(value):
 	heartLife += value
