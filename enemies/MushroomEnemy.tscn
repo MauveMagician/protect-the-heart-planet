@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://materials/spriteOverride.tres" type="Material" id=2]
+[ext_resource path="res://sprites/mushroom_walk_anim_strip_8.png" type="Texture" id=3]
+[ext_resource path="res://enemies/SlowArea.gd" type="Script" id=4]
+[ext_resource path="res://buffs_and_debuffs/TowerSlowDebuff.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4, 4, 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "MushroomAnim"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite3D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 1, 0, 14, 15 ), Rect2( 17, 0, 14, 16 ), Rect2( 34, 0, 12, 15.8 ), Rect2( 49, 0, 14, 15.8 ), Rect2( 65, 0, 14, 15.8 ), Rect2( 81, 0, 14, 15.8 ), Rect2( 98, 0, 12, 15.8 ), Rect2( 113, 0, 14, 15.8 ) ]
+}
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 24, 24, 24 )
+
+[node name="MushroomEnemy" type="PathFollow"]
+rotation_mode = 0
+cubic_interp = false
+loop = false
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+heartDamage = 500
+life = 2
+moveSpeed = 0.002
+lifeScalingFactor = 3.0
+
+[node name="EnemyArea" type="Area" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="EnemyArea"]
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 1, 0, 8, 0 )
+material_override = ExtResource( 2 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 65, 0, 14, 15.8 )
+
+[node name="towerAttackTimer" type="Timer" parent="."]
+process_mode = 0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MushroomAnim"
+playback_process_mode = 0
+playback_speed = 1.5
+anims/MushroomAnim = SubResource( 2 )
+
+[node name="Untargetable" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="SlowArea" type="Area" parent="."]
+editor/display_folded = true
+monitorable = false
+script = ExtResource( 4 )
+debuff = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SlowArea"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="PulseTimer" type="Timer" parent="SlowArea"]
+process_mode = 0
+autostart = true
+[connection signal="timeout" from="Untargetable" to="." method="_on_Untargetable_timeout"]
+[connection signal="timeout" from="SlowArea/PulseTimer" to="SlowArea" method="_on_PulseTimer_timeout"]

@@ -6,7 +6,7 @@
 [ext_resource path="res://enemies/DrawFire.gd" type="Script" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 4, 4, 4 )
+extents = Vector3( 5, 5, 5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "GoblinEnemyAnim"
@@ -39,7 +39,7 @@ __meta__ = {
 heartDamage = 100
 life = 5
 moveSpeed = 0.002
-lifeScalingFactor = 5.0
+lifeScalingFactor = 4.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -76,5 +76,10 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="DrawFire"]
 shape = SubResource( 3 )
+
+[node name="TauntTimer" type="Timer" parent="DrawFire"]
+wait_time = 0.5
+autostart = true
 [connection signal="timeout" from="Untargetable" to="." method="_on_Untargetable_timeout"]
 [connection signal="body_entered" from="DrawFire" to="DrawFire" method="_on_DrawFire_body_entered"]
+[connection signal="timeout" from="DrawFire/TauntTimer" to="DrawFire" method="_on_TauntTimer_timeout"]
