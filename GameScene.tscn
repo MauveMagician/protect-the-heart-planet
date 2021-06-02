@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://GameScene.gd" type="Script" id=1]
 [ext_resource path="res://materials/flatBlack.tres" type="Material" id=2]
@@ -21,9 +21,6 @@
 [ext_resource path="res://LoseScreen.gd" type="Script" id=19]
 [ext_resource path="res://font/gooey.ttf" type="DynamicFontData" id=20]
 [ext_resource path="res://L-curve.tres" type="Curve3D" id=21]
-[ext_resource path="res://MobSpawner.gd" type="Script" id=22]
-[ext_resource path="res://BaseEnemy.tscn" type="PackedScene" id=23]
-[ext_resource path="res://enemies/WormEnemy.tscn" type="PackedScene" id=24]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 200, 180 )
@@ -92,7 +89,7 @@ shape = SubResource( 2 )
 mesh_library = ExtResource( 3 )
 cell_size = Vector3( 16, 16, 16 )
 data = {
-"cells": PoolIntArray( 0, 4, 1, 1, 4, 1, 2, 4, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 6, 4, 1610612737, 65529, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 1, 65535, 4, 1, 0, 5, 1, 1, 5, 1, 2, 5, 1, 3, 5, -1073741823, 4, 5, 1, 5, 5, 1, 6, 5, 1, 65529, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 0, 65530, 1, 1, 65530, 536870913, 2, 65530, 1, 3, 65530, 1, 4, 65530, 1, 5, 65530, 1, 6, 65530, 1, 65529, 65530, 1, 65530, 65530, 1, 65531, 65530, 1, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1, 3, 65531, 1, 4, 65531, 1, 5, 65531, 1, 6, 65531, 1, 65529, 65531, 1, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1 )
+"cells": PoolIntArray( 0, 4, 1, 1, 4, 1, 2, 4, 1073741825, 3, 4, 1, 4, 4, 1, 5, 4, 1, 6, 4, 1, 65529, 4, 1073741825, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 1, 65535, 4, 1, 0, 5, 1, 1, 5, 1073741825, 2, 5, 1, 3, 5, 1, 4, 5, 1, 5, 5, 1, 6, 5, 1610612737, 65529, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 0, 65530, -1073741823, 1, 65530, 1, 2, 65530, 1, 3, 65530, 1, 4, 65530, 1, 5, 65530, 1, 6, 65530, 1, 65529, 65530, 1, 65530, 65530, 1, 65531, 65530, 1, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1, 3, 65531, 1, 4, 65531, 1, 5, 65531, 1, 6, 65531, 1, 65529, 65531, 1, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 536870913, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1 )
 }
 __meta__ = {
 "_editor_clip_": 0
@@ -155,6 +152,11 @@ __meta__ = {
 anims/HeartAnimation = SubResource( 5 )
 
 [node name="LifebarTween" type="Tween" parent="Heart"]
+
+[node name="RegenTimer" type="Timer" parent="Heart"]
+process_mode = 0
+wait_time = 0.01
+autostart = true
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -404,18 +406,15 @@ anchor_bottom = 1.0
 [node name="Path" type="Path" parent="."]
 curve = ExtResource( 21 )
 
-[node name="MobSpawner" type="Node" parent="Path"]
-script = ExtResource( 22 )
-mobs = [ ExtResource( 23 ), ExtResource( 24 ) ]
-
-[node name="Timer" type="Timer" parent="Path/MobSpawner"]
+[node name="NextWaveTimer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 0.5
+wait_time = 7.5
 autostart = true
 [connection signal="resource_changed" from="." to="UI" method="_on_GameScene_resource_changed"]
 [connection signal="wave_changed" from="." to="UI" method="_on_GameScene_wave_changed"]
 [connection signal="area_entered" from="Heart/Area" to="Heart" method="_on_Area_area_entered"]
+[connection signal="timeout" from="Heart/RegenTimer" to="Heart" method="_on_RegenTimer_timeout"]
 [connection signal="pressed" from="UI/PauseButton/PauseButton" to="UI/PauseButton" method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="UI/LoseScreen/RetryButton/RetryButton" to="UI/LoseScreen" method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="UI/LoseScreen/QuitButton/QuitButton" to="UI/LoseScreen" method="_on_QuitButton_pressed"]
-[connection signal="timeout" from="Path/MobSpawner/Timer" to="Path/MobSpawner" method="_on_Timer_timeout"]
+[connection signal="timeout" from="NextWaveTimer" to="." method="_on_NextWaveTimer_timeout"]

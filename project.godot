@@ -26,6 +26,8 @@ Preloader="*res://Preloader.tscn"
 [debug]
 
 gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/return_value_discarded=false
 gdscript/warnings/deprecated_keyword=false
 
 [display]

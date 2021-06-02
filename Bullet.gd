@@ -5,6 +5,8 @@ export var velocity = Vector3(0,0,0)
 export var power = 1
 export var pierce = false
 
+var attackTarget = null
+
 func get_class():
 	return "AllyProjectile"
 
@@ -18,9 +20,16 @@ func _process(delta):
 func _on_Hurtbox_area_entered(area):
 	var target = area.get_parent()
 	if target.get_class() == "Enemy":
-		target.take_damage(self.power)
-		if not pierce:
-			self.queue_free()
+		if not attackTarget:
+			hit(target)
+		else:
+			if target == attackTarget:
+				hit(target)
+
+func hit(target):
+	target.take_damage(self.power)
+	if not pierce:
+		self.queue_free()
 
 func _on_VisibilityNotifier_screen_exited():
 	self.queue_free()

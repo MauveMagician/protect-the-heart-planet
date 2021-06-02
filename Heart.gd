@@ -2,11 +2,16 @@ extends StaticBody
 
 export (int) var heartLife = 10000
 
+var maxHeartLife = 10000
+
 func UpdateLife(value):
-	heartLife += value
-	$Lifebar/Viewport/HeartLifebar.value = heartLife
-	if self.heartLife <= 0:
-		get_parent().heartDefeated()
+	if (self.heartLife + value) <= maxHeartLife:
+		self.heartLife += value
+		$Lifebar/Viewport/HeartLifebar.value = self.heartLife
+		if self.heartLife <= 0:
+			get_parent().heartDefeated()
+	else:
+		self.heartLife = maxHeartLife
 
 func get_class():
 	return "Heart"
@@ -21,3 +26,6 @@ func _on_Area_area_entered(area):
 		self.UpdateLife(-1 * enteringNode.heartDamage)
 		enteringNode.value = 0
 		enteringNode.die()
+
+func _on_RegenTimer_timeout():
+	self.UpdateLife(1)

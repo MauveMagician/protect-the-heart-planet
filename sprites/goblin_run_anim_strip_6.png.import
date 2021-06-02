@@ -2,33 +2,35 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.stex"
+path.s3tc="res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.s3tc.stex"
+path.etc="res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.etc.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/goblin_run_anim_strip_6.png"
-dest_files=[ "res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.stex" ]
+dest_files=[ "res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.s3tc.stex", "res://.import/goblin_run_anim_strip_6.png-c103490e84e724fa9a3fe384f2cbdef5.etc.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

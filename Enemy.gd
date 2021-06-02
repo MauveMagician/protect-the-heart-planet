@@ -2,9 +2,10 @@ extends PathFollow
 
 export (int) var heartDamage = 1000
 export (int) var towerDamage = 1
-export (int) var life = 5
+export (int) var life = 1
 export (int) var value = 1
 export (float) var moveSpeed = 0.004
+export (float) var lifeScalingFactor = 2
 
 var targetable = false
 
@@ -23,6 +24,7 @@ func get_class():
 
 func _ready():
 	self.offset = 0
+	self.life += int((self.get_parent().get_parent().wave * self.lifeScalingFactor))
 
 func _process(_delta):
 	self.unit_offset += self.moveSpeed

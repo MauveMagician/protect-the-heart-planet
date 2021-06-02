@@ -7,6 +7,9 @@ export var cost = 5
 var attackTarget = null
 var canAttack = true
 
+func get_class():
+	return "Tower"
+
 func attack():
 	if is_instance_valid(attackTarget) and attackTarget and attackTarget.get_class() == "Enemy" and canAttack and attackTarget.get_node("EnemyArea") in $AttackRange.get_overlapping_areas() and attackTarget.targetable:
 		var newBullet = Preloader.assets[0].instance()
@@ -41,7 +44,6 @@ func _on_AttackRange_area_exited(area):
 			self.attackTarget = new_target
 		else:
 			self.attackTarget = null
-		print(self.attackTarget)
 
 func _on_AttackTimer_timeout():
 	self.canAttack = true
