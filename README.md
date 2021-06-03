@@ -8,3 +8,5 @@ Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other spr
 Interface icons used in this program are by Kenney https://kenney.itch.io/kenney-game-assets-1
 
 Carrot sprite by palomaironique (Submitted to OpenGameArt by qubodup) https://opengameart.org/content/easter-carrot-pick-up-item
+
+Rose Flower sprite modified from OpenGameArt user Lovecraft https://opengameart.org/content/rose-flower-pyxeledit-document-and-image
