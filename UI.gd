@@ -1,6 +1,7 @@
 extends Control
 
 var placing = false
+var placing_card = null
 var placing_tower = null
 var current_stage = Preloader.stages[0]
 
@@ -10,7 +11,9 @@ func _ready():
 	$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)
 	$WaveMoneyRect/MoneyLabel.text = "MONEY " + String(get_parent().resource)
 
-func place_mode(tower):
+func place_mode(tower_card):
+	var tower = tower_card.tower
+	placing_card = tower_card
 	$CardContainer.visible = false
 	for c in $CardContainer.get_children():
 		if c.has_method("button_disable"):
@@ -21,6 +24,7 @@ func place_mode(tower):
 func normal_mode():
 	placing = false
 	placing_tower = null
+	placing_card = null
 	$CardContainer.visible = true
 	for c in $CardContainer.get_children():
 		if c.has_method("button_enable"):
@@ -38,7 +42,8 @@ func _input(event):
 				var new_tower = placing_tower.instance()
 				get_parent().add_child(new_tower)
 				new_tower.global_transform.origin = Vector3(result.position.x,4,result.position.z)
-				get_parent().change_resource(get_parent().resource - new_tower.cost)
+				get_parent().change_resource(get_parent().resource - self.placing_card.towerCost)
+				placing_card.update_tower_cost(floor(self.placing_card.towerCost * self.placing_card.costMod))
 			self.normal_mode()
 		if event is InputEventMouseButton and event.is_pressed() and event.button_index != 1:
 			self.normal_mode()

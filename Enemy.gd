@@ -24,8 +24,8 @@ func get_class():
 
 func _ready():
 	self.offset = 0
-	self.life += int((self.get_parent().get_parent().wave * self.lifeScalingFactor))
-	self.value += 0.5 * self.get_parent().get_parent().wave
+	self.life += floor((self.get_parent().get_parent().wave * self.lifeScalingFactor))
+	self.value += floor(0.5 * self.get_parent().get_parent().wave)
 
 func _process(_delta):
 	self.unit_offset += self.moveSpeed

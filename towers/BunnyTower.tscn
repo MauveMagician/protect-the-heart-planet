@@ -33,6 +33,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Bunny"
 power = 3
+costMod = 1.25
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0

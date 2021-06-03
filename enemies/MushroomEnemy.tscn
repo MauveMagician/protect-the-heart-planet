@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 4, 4, 4 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 resource_name = "MushroomAnim"
 length = 1.6
 loop = true
@@ -27,7 +27,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 24, 24, 24 )
+extents = Vector3( 12, 12, 12 )
 
 [node name="MushroomEnemy" type="PathFollow"]
 rotation_mode = 0
@@ -38,9 +38,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 heartDamage = 500
-life = 2
+life = 4
+value = 3
 moveSpeed = 0.002
-lifeScalingFactor = 3.0
+lifeScalingFactor = 1.75
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -53,7 +54,7 @@ transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 1, 0, 8, 0 )
 material_override = ExtResource( 2 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 65, 0, 14, 15.8 )
+region_rect = Rect2( 49, 0, 14, 15.8 )
 
 [node name="towerAttackTimer" type="Timer" parent="."]
 process_mode = 0
@@ -63,7 +64,7 @@ one_shot = true
 autoplay = "MushroomAnim"
 playback_process_mode = 0
 playback_speed = 1.5
-anims/MushroomAnim = SubResource( 2 )
+anims/MushroomAnim = SubResource( 4 )
 
 [node name="Untargetable" type="Timer" parent="."]
 process_mode = 0
@@ -72,10 +73,10 @@ one_shot = true
 autostart = true
 
 [node name="SlowArea" type="Area" parent="."]
-editor/display_folded = true
 monitorable = false
 script = ExtResource( 4 )
 debuff = ExtResource( 5 )
+slowAmount = 3.0
 
 [node name="CollisionShape" type="CollisionShape" parent="SlowArea"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
@@ -83,6 +84,7 @@ shape = SubResource( 3 )
 
 [node name="PulseTimer" type="Timer" parent="SlowArea"]
 process_mode = 0
+wait_time = 0.5
 autostart = true
 [connection signal="timeout" from="Untargetable" to="." method="_on_Untargetable_timeout"]
 [connection signal="timeout" from="SlowArea/PulseTimer" to="SlowArea" method="_on_PulseTimer_timeout"]

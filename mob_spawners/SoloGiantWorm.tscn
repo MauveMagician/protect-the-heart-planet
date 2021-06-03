@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MobSpawner.gd" type="Script" id=1]
+[ext_resource path="res://enemies/GiantWormEnemy.tscn" type="PackedScene" id=2]
+
+[node name="MobSpawner" type="Node"]
+script = ExtResource( 1 )
+mobs = [ ExtResource( 2 ) ]
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.5
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

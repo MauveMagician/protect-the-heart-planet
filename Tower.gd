@@ -3,6 +3,7 @@ extends KinematicBody
 export var towerName = "Gunner"
 export var power = 100
 export var cost = 5
+export var costMod = 1.5
 
 var attackTarget = null
 var canAttack = true
@@ -38,12 +39,10 @@ func _on_AttackRange_area_exited(area):
 		var new_target = null
 		for t in $AttackRange.get_overlapping_areas():
 			if t.get_class() == "Enemy":
-				if not new_target and t.life < new_target.life:
+				if t.life < new_target.life:
 					new_target = t
 		if new_target:
 			self.attackTarget = new_target
-		else:
-			self.attackTarget = null
 
 func _on_AttackTimer_timeout():
 	self.canAttack = true

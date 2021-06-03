@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MobSpawner.gd" type="Script" id=1]
+[ext_resource path="res://enemies/TankGoblin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemies/MushroomEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemies/WormEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enemies/FlyEnemy.tscn" type="PackedScene" id=5]
+
+[node name="MobSpawner" type="Node"]
+script = ExtResource( 1 )
+mobs = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.4
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

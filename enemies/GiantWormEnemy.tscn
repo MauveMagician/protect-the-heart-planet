@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/worm_walk_anim_strip_6.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 4, 4, 4 )
+extents = Vector3( 10, 8, 8 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "WormEnemyAnim"
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 16, 10 ), Rect2( 15, 0, 18, 10 ), Rect2( 32, 0, 16, 10 ), Rect2( 48, 0, 16, 10 ), Rect2( 64, 0, 16, 10 ), Rect2( 80, 0, 16, 10 ) ]
 }
 
-[node name="WormEnemy" type="PathFollow"]
+[node name="GiantWormEnemy" type="PathFollow"]
 rotation_mode = 0
 cubic_interp = false
 loop = false
@@ -32,8 +32,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-moveSpeed = 0.003
-lifeScalingFactor = 1.5
+life = 10
+value = 10
+moveSpeed = 0.001
+lifeScalingFactor = 1.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -42,7 +44,7 @@ collision_layer = 3
 shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 1, 0, 8, 0 )
+transform = Transform( 128, 0, 0, 0, 128, 0, 0, 0, 1, 0, 8, 0 )
 material_override = ExtResource( 2 )
 texture = ExtResource( 3 )
 region_enabled = true

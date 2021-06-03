@@ -5,6 +5,8 @@ export (float) var duration = 1
 
 onready var debuffed_unit = self.get_parent()
 
+var speed_before_slow = 1.0
+
 func get_class():
 	return "Debuff"
 
@@ -15,14 +17,16 @@ func _ready():
 	if debuffed_unit.get_class() == "Tower":
 		for c in debuffed_unit.get_children():
 			if c.get_class() == "Debuff":
-				if c.get_debuff_type() == "Slow" and c != self:
+				if  c != self and c.get_debuff_type() == "Slow":
+					self.queue_free()
 					return
 		$Duration.wait_time = self.duration
 		$Duration.start()
-		self.debuffed_unit.get_node("AttackTimer").wait_time += ((self.slow_amount) * debuffed_unit.get_node("AttackTimer").wait_time)
+		speed_before_slow = debuffed_unit.get_node("AttackTimer").wait_time
+		self.debuffed_unit.get_node("AttackTimer").wait_time += (self.slow_amount * speed_before_slow)
 
 func cure():
-	self.debuffed_unit.get_node("AttackTimer").wait_time -= ((1.0 - self.slow_amount) * debuffed_unit.get_node("AttackTimer").wait_time)
+	self.debuffed_unit.get_node("AttackTimer").wait_time -= (self.slow_amount * speed_before_slow)
 	self.queue_free()
 
 func _on_Duration_timeout():

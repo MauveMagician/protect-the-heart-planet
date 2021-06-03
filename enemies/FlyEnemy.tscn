@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://materials/spriteOverride.tres" type="Material" id=2]
-[ext_resource path="res://sprites/worm_walk_anim_strip_6.png" type="Texture" id=3]
+[ext_resource path="res://sprites/blue_fly_idle_or_flying_anim_strip_3.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 4, 4, 4 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "WormEnemyAnim"
-length = 1.2
+resource_name = "FlyEnemyAnim"
+length = 0.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:region_rect")
@@ -18,13 +18,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.218684, 0.4, 0.6, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 0, 0, 16, 10 ), Rect2( 15, 0, 18, 10 ), Rect2( 32, 0, 16, 10 ), Rect2( 48, 0, 16, 10 ), Rect2( 64, 0, 16, 10 ), Rect2( 80, 0, 16, 10 ) ]
+"values": [ Rect2( 0, 0, 8, 7.14681 ), Rect2( 8, 0, 8, 7.14681 ), Rect2( 16, 0, 8, 7.14681 ) ]
 }
 
-[node name="WormEnemy" type="PathFollow"]
+[node name="FlyEnemy" type="PathFollow"]
 rotation_mode = 0
 cubic_interp = false
 loop = false
@@ -32,8 +32,11 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-moveSpeed = 0.003
-lifeScalingFactor = 1.5
+heartDamage = 750
+life = 5
+value = 2
+moveSpeed = 0.006
+lifeScalingFactor = 0.3
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -46,17 +49,17 @@ transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 1, 0, 8, 0 )
 material_override = ExtResource( 2 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 64, 0, 16, 10 )
+region_rect = Rect2( 8, 0, 8, 7.14681 )
 
 [node name="towerAttackTimer" type="Timer" parent="."]
 process_mode = 0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "WormEnemyAnim"
+autoplay = "FlyEnemyAnim"
 playback_process_mode = 0
 playback_speed = 1.5
-anims/WormEnemyAnim = SubResource( 2 )
+anims/FlyEnemyAnim = SubResource( 2 )
 
 [node name="Untargetable" type="Timer" parent="."]
 process_mode = 0
