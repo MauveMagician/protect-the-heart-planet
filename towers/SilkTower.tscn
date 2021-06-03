@@ -1,19 +1,19 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Tower.gd" type="Script" id=1]
+[ext_resource path="res://towers/SilkTower.gd" type="Script" id=1]
 [ext_resource path="res://materials/spriteOverride.tres" type="Material" id=2]
-[ext_resource path="res://sprites/rabit_walk_anim_strip_6.png" type="Texture" id=3]
-[ext_resource path="res://sprites/rabbit-thumbnail.png" type="Texture" id=4]
+[ext_resource path="res://sprites/butterfly spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://sprites/butterfly-thumbnail.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 32, 32, 32 )
+extents = Vector3( 72, 72, 72 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 4, 4, 4 )
 
 [sub_resource type="Animation" id=3]
-resource_name = "BunnyTowerAnim"
-length = 1.2
+resource_name = "butterflyAnim"
+length = 1.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:region_rect")
@@ -22,19 +22,19 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 2, 0, 10, 9 ), Rect2( 82, 0, 11, 9 ), Rect2( 34, 0, 11, 9.06402 ), Rect2( 50, 0, 12, 9.06402 ), Rect2( 66, 0, 11, 9.06402 ), Rect2( 18, 0, 10, 9.06402 ) ]
+"values": [ Rect2( 6, 4, 24, 22 ), Rect2( 38, 4, 26, 24 ), Rect2( 68, 4, 28, 24 ), Rect2( 100, 4, 26, 24 ), Rect2( 132, 4, 26, 24 ), Rect2( 164, 4, 28, 24 ), Rect2( 196, 4, 28, 24 ), Rect2( 230, 4, 24, 24 ) ]
 }
 
-[node name="Tower" type="KinematicBody"]
+[node name="SilkTower" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
-towerName = "Bunny"
-power = 3
-costMod = 1.25
-description = "Basic attack tower,"
+towerName = "Silk"
+power = 1
+cost = 30
+description = "Medium range attacker that targets the fastest foe. Foes shot are slowed."
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0
@@ -52,16 +52,16 @@ transform = Transform( 72, 0, 0, 0, 72, 0, 0, 0, 1, 0, 0, 0 )
 material_override = ExtResource( 2 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 66, 0, 11, 9.06402 )
+region_rect = Rect2( 6, 4, 24, 22 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "BunnyTowerAnim"
+autoplay = "butterflyAnim"
 playback_process_mode = 0
 playback_speed = 2.0
-anims/BunnyTowerAnim = SubResource( 3 )
+anims/butterflyAnim = SubResource( 3 )
 
 [node name="Thumbnail" type="Sprite" parent="."]
 visible = false

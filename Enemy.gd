@@ -23,12 +23,14 @@ func get_class():
 	return "Enemy"
 
 func _ready():
+	$EnemyArea.monitorable = false
 	self.offset = 0
 	self.life += floor((self.get_parent().get_parent().wave * self.lifeScalingFactor))
 	self.value += floor(0.5 * self.get_parent().get_parent().wave)
 
-func _process(_delta):
-	self.unit_offset += self.moveSpeed
+func _process(delta):
+	self.unit_offset += self.moveSpeed * (1.0 + delta)
 
 func _on_Untargetable_timeout():
 	self.targetable = true
+	$EnemyArea.monitorable = true

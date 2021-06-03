@@ -4,7 +4,7 @@
 
 [node name="TowerSlowDebuff" type="Node"]
 script = ExtResource( 1 )
-duration = 5.0
+duration = 2.5
 
 [node name="Duration" type="Timer" parent="."]
 process_mode = 0

@@ -4,9 +4,11 @@ export var towerName = "Gunner"
 export var power = 100
 export var cost = 5
 export var costMod = 1.5
+export (String) var description = ""
 
 var attackTarget = null
 var canAttack = true
+var target_queue = []
 
 func get_class():
 	return "Tower"
@@ -31,18 +33,21 @@ func _process(_delta):
 func _on_AttackRange_area_entered(area):
 	var target = area.get_parent()
 	if target.has_method("get_class") and target.get_class() == "Enemy":
-		self.attackTarget = target
+		if not self.attackTarget or !is_instance_valid(self.attackTarget) or self.attackTarget.get_class() != "Enemy":
+			self.attackTarget = target
+		else:
+			target_queue.push_back(target)
 
 func _on_AttackRange_area_exited(area):
-	if area == self.attackTarget:
-		self.attackTarget = null
-		var new_target = null
-		for t in $AttackRange.get_overlapping_areas():
+	if area.get_parent() == self.attackTarget:
+		if !is_instance_valid(self.attackTarget) or self.attackTarget.get_class() != "Enemy":
+			self.attackTarget = null
+		target_queue.sort_custom(Preloader.CustomSorter, "sort_life_ascending")
+		while not target_queue.empty():
+			var t = target_queue.pop_front()
 			if t.get_class() == "Enemy":
-				if t.life < new_target.life:
-					new_target = t
-		if new_target:
-			self.attackTarget = new_target
+					self.attackTarget = t
+					return
 
 func _on_AttackTimer_timeout():
 	self.canAttack = true
