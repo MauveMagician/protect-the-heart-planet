@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/rose-tower-spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://sprites/rose-thumbnail.png" type="Texture" id=4]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 4, 4, 4 )
 
 [sub_resource type="Animation" id=2]
@@ -31,11 +31,12 @@ script = ExtResource( 1 )
 towerName = "Rose"
 power = 5
 cost = 50
-costMod = 2.0
+costMod = 3.0
 description = "Generates money simply by existing"
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0
+wait_time = 5.0
 one_shot = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -45,7 +46,7 @@ region_enabled = true
 region_rect = Rect2( 1937, 0, 929, 1281 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FlowerTowerAnim"

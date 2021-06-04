@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/butterfly-thumbnail.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 48, 48, 48 )
+extents = Vector3( 30, 30, 30 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 6, 6, 6 )
@@ -35,10 +35,11 @@ towerName = "Silk"
 power = 5
 cost = 25
 costMod = 2.0
-description = "Medium range attacker. Foes shot are slowed."
+description = "Short range. Foes shot are slowed."
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0
+wait_time = 1.5
 one_shot = true
 
 [node name="AttackRange" type="Area" parent="."]

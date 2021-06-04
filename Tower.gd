@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var towerName = "Gunner"
-export var power = 100
+export var power = 100.0
 export var cost = 5
 export var costMod = 1.5
 export (String) var description = ""
