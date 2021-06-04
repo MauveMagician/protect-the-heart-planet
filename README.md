@@ -15,3 +15,5 @@ Rose Flower sprite modified from OpenGameArt user Lovecraft https://opengameart.
 Butterfly sprite from the Forest Monster sprite pack by Calciumtrice. This project does not contain the entire asset pack. https://opengameart.org/content/forest-monsters
 
 Heroic Asset Series Creature Pack used in this program is made by Aleksandr Makarov. This project does not contain the entire asset pack. https://iknowkingrabbit.itch.io/heroic-creature-pack
+
+Fire Elemental sprite by Ahmet Avci (OpenGameArt user Elthen). Patreon page: https://www.patreon.com/elthen https://opengameart.org/content/pixel-art-fire-elemental-sprites
