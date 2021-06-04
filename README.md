@@ -2,7 +2,9 @@
 A simple tower defense game in Godot.
 
 # Credits
-Enter Command font by used in this program is made by jeti https://fontenddev.com/fonts/enter-command/
+Enter Command font used in this program is made by jeti https://fontenddev.com/fonts/enter-command/
+
+Gooey font used in dhis program is made by Dreadful Productions https://www.dafont.com/pt/gooey.font
 
 Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other sprites used in this program are from the PIXEL ART METROIDVANIA ASSET PACK by o_lobster. This project does not contain the entire asset pack. https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack
 
