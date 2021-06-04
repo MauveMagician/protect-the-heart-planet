@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 4, 4, 4 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "MushroomAnim"
 length = 1.6
 loop = true
@@ -41,7 +41,7 @@ heartDamage = 500
 life = 4
 value = 3
 moveSpeed = 0.002
-lifeScalingFactor = 1.75
+lifeScalingFactor = 2.5
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -64,7 +64,7 @@ one_shot = true
 autoplay = "MushroomAnim"
 playback_process_mode = 0
 playback_speed = 1.5
-anims/MushroomAnim = SubResource( 4 )
+anims/MushroomAnim = SubResource( 2 )
 
 [node name="Untargetable" type="Timer" parent="."]
 process_mode = 0

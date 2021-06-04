@@ -40,7 +40,7 @@ heartDamage = 100
 life = 6
 value = 5
 moveSpeed = 0.002
-lifeScalingFactor = 3.0
+lifeScalingFactor = 5.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -72,6 +72,8 @@ one_shot = true
 autostart = true
 
 [node name="DrawFire" type="Area" parent="."]
+input_ray_pickable = false
+gravity_vec = Vector3( 0, 0, 0 )
 monitorable = false
 script = ExtResource( 4 )
 
@@ -79,7 +81,7 @@ script = ExtResource( 4 )
 shape = SubResource( 3 )
 
 [node name="TauntTimer" type="Timer" parent="DrawFire"]
-wait_time = 0.5
+process_mode = 0
 autostart = true
 [connection signal="timeout" from="Untargetable" to="." method="_on_Untargetable_timeout"]
 [connection signal="body_entered" from="DrawFire" to="DrawFire" method="_on_DrawFire_body_entered"]

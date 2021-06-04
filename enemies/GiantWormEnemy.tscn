@@ -35,7 +35,7 @@ __meta__ = {
 life = 10
 value = 10
 moveSpeed = 0.001
-lifeScalingFactor = 1.0
+lifeScalingFactor = 15.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3

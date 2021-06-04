@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://towers/FlowerTower.gd" type="Script" id=1]
 [ext_resource path="res://materials/spriteOverride.tres" type="Material" id=2]
@@ -6,12 +6,9 @@
 [ext_resource path="res://sprites/rose-thumbnail.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 32, 32, 32 )
-
-[sub_resource type="BoxShape" id=2]
 extents = Vector3( 4, 4, 4 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "FlowerTowerAnim"
 length = 0.8
 loop = true
@@ -34,18 +31,12 @@ script = ExtResource( 1 )
 towerName = "Rose"
 power = 5
 cost = 50
-costMod = 3.0
+costMod = 2.0
 description = "Generates money simply by existing"
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0
 one_shot = true
-
-[node name="AttackRange" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="AttackRange"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
-shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 material_override = ExtResource( 2 )
@@ -54,17 +45,15 @@ region_enabled = true
 region_rect = Rect2( 1937, 0, 929, 1281 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FlowerTowerAnim"
 playback_process_mode = 0
-anims/FlowerTowerAnim = SubResource( 3 )
+anims/FlowerTowerAnim = SubResource( 2 )
 
 [node name="Thumbnail" type="Sprite" parent="."]
 visible = false
 scale = Vector2( 0.013, 0.013 )
 texture = ExtResource( 4 )
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
-[connection signal="area_entered" from="AttackRange" to="." method="_on_AttackRange_area_entered"]
-[connection signal="area_exited" from="AttackRange" to="." method="_on_AttackRange_area_exited"]

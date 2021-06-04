@@ -1,6 +1,6 @@
 extends Spatial
 
-export (int) var speed = 320
+export (int) var speed = 4
 export var velocity = Vector3(0,0,0)
 export var power = 1
 export var pierce = false
@@ -15,7 +15,7 @@ func _ready():
 	self.velocity.y = 0
 
 func _process(delta):
-	self.global_transform.origin += self.velocity * self.speed * delta
+	self.global_transform.origin += self.velocity * self.speed * (1+delta)
 
 func _on_Hurtbox_area_entered(area):
 	var target = area.get_parent()

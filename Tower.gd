@@ -42,12 +42,12 @@ func _on_AttackRange_area_exited(area):
 	if area.get_parent() == self.attackTarget:
 		if !is_instance_valid(self.attackTarget) or self.attackTarget.get_class() != "Enemy":
 			self.attackTarget = null
-		target_queue.sort_custom(Preloader.CustomSorter, "sort_life_ascending")
 		while not target_queue.empty():
 			var t = target_queue.pop_front()
-			if t.get_class() == "Enemy":
+			if is_instance_valid(t) and t.get_class() == "Enemy":
 					self.attackTarget = t
 					return
+		self.attackTarget = null
 
 func _on_AttackTimer_timeout():
 	self.canAttack = true

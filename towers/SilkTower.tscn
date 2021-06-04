@@ -6,10 +6,10 @@
 [ext_resource path="res://sprites/butterfly-thumbnail.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 72, 72, 72 )
+extents = Vector3( 48, 48, 48 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 4, 4, 4 )
+extents = Vector3( 6, 6, 6 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "butterflyAnim"
@@ -32,13 +32,13 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Silk"
-power = 1
-cost = 30
-description = "Medium range attacker that targets the fastest foe. Foes shot are slowed."
+power = 5
+cost = 25
+costMod = 2.0
+description = "Medium range attacker. Foes shot are slowed."
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 0.25
 one_shot = true
 
 [node name="AttackRange" type="Area" parent="."]

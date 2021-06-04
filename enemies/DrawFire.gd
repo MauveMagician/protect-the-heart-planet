@@ -6,5 +6,5 @@ func _on_DrawFire_body_entered(body):
 
 func _on_TauntTimer_timeout():
 	for b in self.get_overlapping_bodies():
-		if b.get_class() == "Tower" and b.attackTarget != self.get_parent() and get_parent().get_node("EnemyArea") in b.get_node("AttackRange").get_overlapping_areas():
+		if b.get_class() == "Tower" and b.attackTarget != self.get_parent() and get_parent().get_node("EnemyArea") in b.target_queue:
 			b.attackTarget = get_parent()

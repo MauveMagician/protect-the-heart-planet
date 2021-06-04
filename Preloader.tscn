@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Preloader.gd" type="Script" id=1]
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SlowBullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MobSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://mob_spawners/SpawnerLedByTank.tscn" type="PackedScene" id=6]
@@ -21,6 +21,6 @@
 
 [node name="Preloader" type="Node"]
 script = ExtResource( 1 )
-assets = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ]
+assets = [ ExtResource( 2 ), ExtResource( 3 ) ]
 stages = [ ExtResource( 4 ) ]
 spawners = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ]
