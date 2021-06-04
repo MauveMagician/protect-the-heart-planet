@@ -29,7 +29,7 @@ func _ready():
 	self.value += floor(0.5 * self.get_parent().get_parent().wave)
 
 func _process(delta):
-	self.unit_offset += self.moveSpeed * (1.0 + delta)
+	self.offset += self.moveSpeed * 180 * (1.0 + delta)
 
 func _on_Untargetable_timeout():
 	self.targetable = true

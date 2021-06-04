@@ -35,7 +35,7 @@ __meta__ = {
 }
 heartDamage = 1500
 moveSpeed = 0.003
-lifeScalingFactor = 3.0
+lifeScalingFactor = 2.5
 
 [node name="EnemyArea" type="Area" parent="."]
 editor/display_folded = true

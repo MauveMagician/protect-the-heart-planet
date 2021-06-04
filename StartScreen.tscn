@@ -35,28 +35,152 @@ valign = 1
 autowrap = true
 uppercase = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BasicButtonsContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 232.0
 margin_top = -192.0
 margin_right = -230.0
+margin_bottom = -24.0
 alignment = 1
 
-[node name="StartButtonRect" type="NinePatchRect" parent="VBoxContainer"]
-margin_top = 76.0
+[node name="StartButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
+margin_top = 64.0
 margin_right = 178.0
-margin_bottom = 116.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 178, 40 )
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer/StartButtonRect"]
+[node name="MenuButton" type="Button" parent="BasicButtonsContainer/StartButtonRect"]
 margin_right = 178.0
 margin_bottom = 40.0
-focus_mode = 2
 theme = ExtResource( 3 )
-enabled_focus_mode = 2
 text = "ENDLESS MODE"
-flat = false
-switch_on_hover = true
-[connection signal="pressed" from="VBoxContainer/StartButtonRect/MenuButton" to="." method="_on_MenuButton_pressed"]
+
+[node name="CourseSelect" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -296.0
+margin_top = -128.0
+margin_right = 288.0
+margin_bottom = 96.0
+color = Color( 0.831373, 0.466667, 0.65098, 0.882353 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CourseSelect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CourseSelect/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 13.0
+margin_right = 89.0
+margin_bottom = 41.0
+theme = ExtResource( 3 )
+text = "SELECT COURSE"
+
+[node name="GridContainer" type="GridContainer" parent="CourseSelect/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 56.0
+margin_right = -26.0
+margin_bottom = -40.0
+columns = 3
+
+[node name="Classic" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_right = 178.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="ClassicButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Classic"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "CLASSIC"
+
+[node name="Onslaught" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_left = 182.0
+margin_right = 360.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="OnslaughtButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Onslaught"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "ONSLAUGHT"
+
+[node name="Simple" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_left = 364.0
+margin_right = 542.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="SimpleButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Simple"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "SIMPLE"
+
+[node name="Yarn" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_top = 44.0
+margin_right = 178.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="YarnButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Yarn"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "YARN"
+
+[node name="Spiral" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_left = 182.0
+margin_top = 44.0
+margin_right = 360.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="SpiralButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Spiral"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "SPIRAL"
+
+[node name="Serpentine" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_left = 364.0
+margin_top = 44.0
+margin_right = 542.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="SerpentineButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/Serpentine"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "SERPENTINE"
+
+[node name="BackButton" type="NinePatchRect" parent="CourseSelect/NinePatchRect/GridContainer"]
+margin_top = 88.0
+margin_right = 178.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="BackButton" type="Button" parent="CourseSelect/NinePatchRect/GridContainer/BackButton"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "BACK"
+[connection signal="pressed" from="BasicButtonsContainer/StartButtonRect/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Classic/ClassicButton" to="." method="_on_ClassicButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Onslaught/OnslaughtButton" to="." method="_on_OnslaughtButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Simple/SimpleButton" to="." method="_on_SimpleButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Yarn/YarnButton" to="." method="_on_YarnButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Spiral/SpiralButton" to="." method="_on_SpiralButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Serpentine/SerpentineButton" to="." method="_on_SerpentineButton_pressed"]
+[connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/BackButton/BackButton" to="." method="_on_BackButton_pressed"]

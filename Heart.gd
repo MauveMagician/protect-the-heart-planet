@@ -28,4 +28,4 @@ func _on_Area_area_entered(area):
 		enteringNode.die()
 
 func _on_RegenTimer_timeout():
-	self.UpdateLife(1)
+	self.UpdateLife(100)

@@ -2,6 +2,7 @@ extends Spatial
 
 export (int) var resource = 20
 export (int) var wave = 0
+export (String) var course_name = "Course"
 
 signal wave_changed
 signal resource_changed
