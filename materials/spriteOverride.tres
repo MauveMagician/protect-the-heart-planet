@@ -3,5 +3,7 @@
 [resource]
 flags_transparent = true
 flags_unshaded = true
+flags_no_depth_test = true
+flags_do_not_receive_shadows = true
 params_billboard_mode = 1
 params_billboard_keep_scale = true
