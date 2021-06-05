@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Morning rain.ogg-d02de4b422ef7fcf070d786372f77c93.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

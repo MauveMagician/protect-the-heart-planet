@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Cat caffe.ogg-1b824b2ddd25638f7ebbe6f2aea88e18.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

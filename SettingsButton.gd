@@ -3,6 +3,7 @@ extends NinePatchRect
 var texture_index = 0
 
 func _on_Button_pressed():
+	Preloader.get_node("SoundEffects/ConfirmSound").play()
 	get_tree().paused = not get_tree().paused
 	get_parent().get_node("SettingsMenu").visible = not get_parent().get_node("SettingsMenu").visible
 	get_parent().get_node("PauseButton").visible = not get_parent().get_node("PauseButton").visible

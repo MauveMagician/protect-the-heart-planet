@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Oceanside.ogg-e3deea2e588eb759a66cf547be59c0b3.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

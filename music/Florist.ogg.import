@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Florist.ogg-38c2f5f3643efe9046089bf1bfe6007a.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

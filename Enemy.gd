@@ -15,6 +15,7 @@ func die():
 	self.queue_free()
 
 func take_damage(value):
+	Preloader.get_node("SoundEffects/EnemyHitSound").play()
 	self.life -= value
 	if self.life <= 0:
 		self.die()

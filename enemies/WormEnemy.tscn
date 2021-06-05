@@ -33,9 +33,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-heartDamage = 1500
+heartDamage = 2000
+life = 5
 moveSpeed = 0.003
-lifeScalingFactor = 2.5
+lifeScalingFactor = 10.0
 
 [node name="EnemyArea" type="Area" parent="."]
 editor/display_folded = true

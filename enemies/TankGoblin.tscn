@@ -36,9 +36,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-life = 6
+heartDamage = 1500
+life = 15
 moveSpeed = 0.002
-lifeScalingFactor = 15.0
+lifeScalingFactor = 120.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3

@@ -32,9 +32,8 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Silk"
-power = 5
-cost = 25
-costMod = 2.0
+cost = 75
+costMod = 3.0
 description = "Short range. Foes shot are slowed."
 
 [node name="AttackTimer" type="Timer" parent="."]

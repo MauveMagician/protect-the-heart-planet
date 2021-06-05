@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Preloader.gd" type="Script" id=1]
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=2]
@@ -25,6 +25,11 @@
 [ext_resource path="res://mob_spawners/DefensiveFlight.tscn" type="PackedScene" id=23]
 [ext_resource path="res://mob_spawners/SoloGiantWorm.tscn" type="PackedScene" id=24]
 [ext_resource path="res://MusicPlayer.gd" type="Script" id=25]
+[ext_resource path="res://sound/hit-2.wav" type="AudioStream" id=26]
+[ext_resource path="res://sound/bonk-4.wav" type="AudioStream" id=27]
+[ext_resource path="res://sound/lose-4.wav" type="AudioStream" id=28]
+[ext_resource path="res://sound/cancel-1.wav" type="AudioStream" id=29]
+[ext_resource path="res://sound/ok-2.wav" type="AudioStream" id=30]
 
 [node name="Preloader" type="Node"]
 script = ExtResource( 1 )
@@ -36,4 +41,27 @@ spawners = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResourc
 pause_mode = 2
 volume_db = -10.0
 script = ExtResource( 25 )
+
+[node name="SoundEffects" type="Node" parent="."]
+pause_mode = 2
+
+[node name="EnemyHitSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 26 )
+volume_db = -15.0
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 27 )
+volume_db = -15.0
+
+[node name="HeartDamageSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 28 )
+volume_db = -15.0
+
+[node name="CancelSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 29 )
+volume_db = -15.0
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource( 30 )
+volume_db = -15.0
 [connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_MusicPlayer_finished"]

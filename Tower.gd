@@ -15,6 +15,7 @@ func get_class():
 
 func attack():
 	if is_instance_valid(attackTarget) and attackTarget and attackTarget.get_class() == "Enemy" and canAttack and attackTarget.get_node("EnemyArea") in $AttackRange.get_overlapping_areas() and attackTarget.targetable:
+		Preloader.get_node("SoundEffects/ShootingSound").play()
 		var newBullet = Preloader.assets[0].instance()
 		newBullet.velocity = (attackTarget.global_transform.origin - self.global_transform.origin).normalized()
 		newBullet.transform = self.global_transform

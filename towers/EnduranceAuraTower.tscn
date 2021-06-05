@@ -32,8 +32,8 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Canary"
-power = 0.75
-cost = 1000
+power = 0.5
+cost = 5000
 costMod = 5.0
 description = "Passive unit. Makes other units faster."
 

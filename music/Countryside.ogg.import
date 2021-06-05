@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Countryside.ogg-c7ed3c55e2aa0f0c1681a920aa952b6f.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

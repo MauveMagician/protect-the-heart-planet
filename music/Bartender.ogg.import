@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Bartender.ogg-49bb9eae414f4956c99b4d0c043cbe64.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -244,9 +244,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -144.0
-margin_top = -20.0
+margin_top = -44.0
 margin_right = 144.0
-margin_bottom = 20.0
+margin_bottom = -4.0
 
 [node name="Label" type="Label" parent="SettingsMenu/SettingsRectangle/VolumeControl"]
 anchor_left = 0.5
@@ -270,12 +270,50 @@ margin_top = -8.0
 margin_right = 132.0
 margin_bottom = 8.0
 min_value = -60.0
-max_value = 5.0
+max_value = 10.0
+step = 2.5
+value = -15.0
+ticks_on_borders = true
+
+[node name="SFXVolumeControl" type="NinePatchRect" parent="SettingsMenu/SettingsRectangle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -20.0
+margin_right = 144.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="SettingsMenu/SettingsRectangle/SFXVolumeControl"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -16.0
+margin_right = -68.0
+margin_bottom = 12.0
+theme = ExtResource( 7 )
+text = "SOUND"
+
+[node name="SFX_HSlider" type="HSlider" parent="SettingsMenu/SettingsRectangle/SFXVolumeControl"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -8.0
+margin_right = 132.0
+margin_bottom = 8.0
+min_value = -60.0
+max_value = 10.0
 step = 2.5
 value = -15.0
 ticks_on_borders = true
 
 [node name="VolumeControl2" type="NinePatchRect" parent="SettingsMenu/SettingsRectangle"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -304,7 +342,6 @@ margin_bottom = 40.0
 
 [node name="PauseButton" type="NinePatchRect" parent="."]
 pause_mode = 2
-editor/display_folded = true
 margin_left = 540.0
 margin_top = 10.0
 margin_right = 580.0
@@ -464,6 +501,8 @@ anchor_bottom = 1.0
 [connection signal="pressed" from="SettingsMenu/SettingsRectangle/QuitButton2/QuitButton" to="LoseScreen" method="_on_QuitButton_pressed"]
 [connection signal="mouse_exited" from="SettingsMenu/SettingsRectangle/VolumeControl/HSlider" to="." method="_on_HSlider_mouse_exited"]
 [connection signal="value_changed" from="SettingsMenu/SettingsRectangle/VolumeControl/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="mouse_exited" from="SettingsMenu/SettingsRectangle/SFXVolumeControl/SFX_HSlider" to="." method="_on_SFX_HSlider_mouse_exited"]
+[connection signal="value_changed" from="SettingsMenu/SettingsRectangle/SFXVolumeControl/SFX_HSlider" to="." method="_on_SFX_HSlider_value_changed"]
 [connection signal="mouse_exited" from="SettingsMenu/SettingsRectangle/VolumeControl2/CheckButton" to="." method="_on_CheckButton_mouse_exited"]
 [connection signal="toggled" from="SettingsMenu/SettingsRectangle/VolumeControl2/CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="pressed" from="PauseButton/PauseButton" to="PauseButton" method="_on_PauseButton_pressed"]

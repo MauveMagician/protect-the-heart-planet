@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Rainy Forest.ogg-656ebf8421a37319fc129066d0b56752.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

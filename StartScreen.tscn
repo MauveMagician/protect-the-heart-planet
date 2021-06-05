@@ -46,9 +46,10 @@ margin_bottom = -24.0
 alignment = 1
 
 [node name="StartButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
-margin_top = 64.0
+editor/display_folded = true
+margin_top = 42.0
 margin_right = 178.0
-margin_bottom = 104.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 178, 40 )
 
 [node name="MenuButton" type="Button" parent="BasicButtonsContainer/StartButtonRect"]
@@ -57,7 +58,29 @@ margin_bottom = 40.0
 theme = ExtResource( 3 )
 text = "ENDLESS MODE"
 
+[node name="GithubButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
+editor/display_folded = true
+margin_top = 86.0
+margin_right = 178.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="GithubButton" type="LinkButton" parent="BasicButtonsContainer/GithubButtonRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -94.0
+margin_top = -14.0
+margin_right = 94.0
+margin_bottom = 14.0
+focus_mode = 1
+theme = ExtResource( 3 )
+enabled_focus_mode = 1
+text = "GITHUB PROJECT"
+
 [node name="CourseSelect" type="ColorRect" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -177,6 +200,7 @@ margin_bottom = 40.0
 theme = ExtResource( 3 )
 text = "BACK"
 [connection signal="pressed" from="BasicButtonsContainer/StartButtonRect/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="BasicButtonsContainer/GithubButtonRect/GithubButton" to="." method="_on_GithubButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Classic/ClassicButton" to="." method="_on_ClassicButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Onslaught/OnslaughtButton" to="." method="_on_OnslaughtButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Simple/SimpleButton" to="." method="_on_SimpleButton_pressed"]

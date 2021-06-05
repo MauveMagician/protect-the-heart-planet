@@ -11,5 +11,5 @@ dest_files=[ "res://.import/A cup of tea.ogg-4212b55ce1adc00771143b733f44ba6f.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -6,6 +6,9 @@ var maxHeartLife = 10000
 
 func UpdateLife(value):
 	if (self.heartLife + value) <= maxHeartLife:
+		if value < 0:
+			print("got here!")
+			Preloader.get_node("SoundEffects/HeartDamageSound").play()
 		self.heartLife += value
 		$Lifebar/Viewport/HeartLifebar.value = self.heartLife
 		if self.heartLife <= 0:
@@ -28,4 +31,4 @@ func _on_Area_area_entered(area):
 		enteringNode.die()
 
 func _on_RegenTimer_timeout():
-	self.UpdateLife(100)
+	self.UpdateLife(5)

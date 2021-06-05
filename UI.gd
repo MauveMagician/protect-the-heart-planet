@@ -44,8 +44,12 @@ func _input(event):
 				new_tower.global_transform.origin = Vector3(result.position.x,4,result.position.z)
 				get_parent().change_resource(get_parent().resource - self.placing_card.towerCost)
 				placing_card.update_tower_cost(floor(self.placing_card.towerCost * self.placing_card.costMod))
+				Preloader.get_node("SoundEffects/ConfirmSound").play()
+			else:
+				Preloader.get_node("SoundEffects/CancelSound").play()
 			self.normal_mode()
 		if event is InputEventMouseButton and event.is_pressed() and event.button_index != 1:
+			Preloader.get_node("SoundEffects/CancelSound").play()
 			self.normal_mode()
 
 func _on_GameScene_resource_changed():
@@ -62,7 +66,6 @@ func _on_GameScene_wave_changed():
 
 func _on_HSlider_value_changed(value):
 	Preloader.get_node("MusicPlayer").volume_db = float(value)
-	print(Preloader.get_node("MusicPlayer").volume_db)
 
 func _on_HSlider_mouse_exited():
 	$SettingsMenu/SettingsRectangle/VolumeControl/HSlider.release_focus()
@@ -71,8 +74,17 @@ func _on_CheckButton_button_up():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
 
 func _on_CheckButton_toggled(button_pressed):
+	Preloader.get_node("SoundEffects/ConfirmSound").play()
 	var idx = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_mute(idx, not AudioServer.is_bus_mute(idx))
 
 func _on_CheckButton_mouse_exited():
 	$SettingsMenu/SettingsRectangle/VolumeControl2/CheckButton.release_focus()
+
+func _on_SFX_HSlider_value_changed(value):
+	for s in Preloader.get_node("SoundEffects").get_children():
+		s.volume_db = float(value)
+		Preloader.get_node("SoundEffects/CancelSound").play()
+
+func _on_SFX_HSlider_mouse_exited():
+	$SettingsMenu/SettingsRectangle/SFXVolumeControl/SFX_HSlider.release_focus()

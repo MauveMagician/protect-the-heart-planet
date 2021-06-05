@@ -2,10 +2,12 @@ extends Control
 
 func _on_MenuButton_pressed():
 	$CourseSelect.visible = true
+	Preloader.get_node("SoundEffects/ConfirmSound").play()
 	$BasicButtonsContainer.get_node("StartButtonRect/MenuButton").visible = false
 
 func _on_BackButton_pressed():
 	$CourseSelect.visible = false
+	Preloader.get_node("SoundEffects/CancelSound").play()
 	$BasicButtonsContainer.get_node("StartButtonRect/MenuButton").visible = true
 
 func _on_SerpentineButton_pressed():
@@ -31,3 +33,6 @@ func _on_OnslaughtButton_pressed():
 func _on_ClassicButton_pressed():
 	Preloader.playing_course_index = 1
 	get_tree().change_scene_to(Preloader.stages[1])
+
+func _on_GithubButton_pressed():
+	OS.shell_open("https://github.com/MauveMagician/protect-the-heart-planet")
