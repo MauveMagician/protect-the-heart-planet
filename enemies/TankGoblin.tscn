@@ -39,7 +39,7 @@ __meta__ = {
 heartDamage = 1500
 life = 15
 moveSpeed = 0.002
-lifeScalingFactor = 120.0
+lifeScalingFactor = 15.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
@@ -73,6 +73,7 @@ autostart = true
 [node name="DrawFire" type="Area" parent="."]
 input_ray_pickable = false
 gravity_vec = Vector3( 0, 0, 0 )
+monitoring = false
 monitorable = false
 script = ExtResource( 4 )
 

@@ -33,7 +33,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 heartDamage = 3000
-life = 100
+life = 500
 value = 10
 moveSpeed = 0.002
 lifeScalingFactor = 500.0

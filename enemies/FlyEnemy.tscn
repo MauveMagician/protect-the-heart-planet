@@ -35,7 +35,7 @@ __meta__ = {
 heartDamage = 2500
 life = 5
 moveSpeed = 0.006
-lifeScalingFactor = 10.0
+lifeScalingFactor = 5.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3

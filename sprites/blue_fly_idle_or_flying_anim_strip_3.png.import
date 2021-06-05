@@ -14,7 +14,7 @@ dest_files=[ "res://.import/blue_fly_idle_or_flying_anim_strip_3.png-5f93b4d7628
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -23,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=0
 process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false

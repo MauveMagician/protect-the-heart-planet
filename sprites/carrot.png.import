@@ -2,31 +2,29 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.s3tc.stex"
-path.etc="res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.etc.stex"
+path="res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://sprites/carrot.png"
-dest_files=[ "res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.s3tc.stex", "res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.etc.stex" ]
+dest_files=[ "res://.import/carrot.png-76d9ce4583170baa6781d85b0386a785.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=3
+compress/lossy_quality=1.0
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
-process/fix_alpha_border=true
+flags/srgb=0
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

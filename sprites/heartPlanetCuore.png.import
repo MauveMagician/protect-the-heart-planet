@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/heartPlanetCuore.png-f29839fcc20e930f2fe24d1769c77435.s3tc.stex"
-path.etc="res://.import/heartPlanetCuore.png-f29839fcc20e930f2fe24d1769c77435.etc.stex"
+path="res://.import/heartplanetcuore.png-4e4f3c0a05796734a487da791dcca21c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/heartPlanetCuore.png"
-dest_files=[ "res://.import/heartPlanetCuore.png-f29839fcc20e930f2fe24d1769c77435.s3tc.stex", "res://.import/heartPlanetCuore.png-f29839fcc20e930f2fe24d1769c77435.etc.stex" ]
+source_file="res://sprites/heartplanetcuore.png"
+dest_files=[ "res://.import/heartplanetcuore.png-4e4f3c0a05796734a487da791dcca21c.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=1.0
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -25,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=0
 process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false

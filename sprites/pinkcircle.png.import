@@ -2,31 +2,29 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.s3tc.stex"
-path.etc="res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.etc.stex"
+path="res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://sprites/pinkcircle.png"
-dest_files=[ "res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.s3tc.stex", "res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.etc.stex" ]
+dest_files=[ "res://.import/pinkcircle.png-372156738aa195bf3a3af0638ec2048c.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.7
+compress/mode=3
+compress/lossy_quality=1.0
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
-process/fix_alpha_border=true
+flags/srgb=0
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
