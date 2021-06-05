@@ -7,16 +7,17 @@ func _ready():
 	randomize()
 
 func music_start():
-	randomize()
-	tracks.shuffle()
-	var t = Timer.new()
-	t.set_wait_time(2.0)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
-	self.stream = load(tracks[0])
-	self.play()
+	if not self.playing:
+		randomize()
+		tracks.shuffle()
+		var t = Timer.new()
+		t.set_wait_time(2.0)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		self.stream = load(tracks[0])
+		self.play()
 
 func _on_MusicPlayer_finished():
 	randomize()

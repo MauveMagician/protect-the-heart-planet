@@ -7,7 +7,8 @@ var maxHeartLife = 10000
 func UpdateLife(value):
 	if (self.heartLife + value) <= maxHeartLife:
 		if value < 0:
-			print("got here!")
+			OS.delay_msec(125)
+			get_parent().get_node("CameraPivot/MainCamera/Screenshake").start()
 			Preloader.get_node("SoundEffects/HeartDamageSound").play()
 		self.heartLife += value
 		$Lifebar/Viewport/HeartLifebar.value = self.heartLife

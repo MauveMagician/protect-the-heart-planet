@@ -1,19 +1,20 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://GameScene.gd" type="Script" id=1]
 [ext_resource path="res://materials/flatBlack.tres" type="Material" id=2]
 [ext_resource path="res://basicMeshLibrary.meshlib" type="MeshLibrary" id=3]
-[ext_resource path="res://Heart.gd" type="Script" id=4]
-[ext_resource path="res://materials/spriteOverride.tres" type="Material" id=5]
-[ext_resource path="res://sprites/heartPlanetCuore.png" type="Texture" id=6]
-[ext_resource path="res://Lifebar.gd" type="Script" id=7]
-[ext_resource path="res://sprites/purplecircle.png" type="Texture" id=8]
-[ext_resource path="res://sprites/pinkcircle.png" type="Texture" id=9]
-[ext_resource path="res://UI.tscn" type="PackedScene" id=10]
-[ext_resource path="res://CurveDraw.gd" type="Script" id=11]
+[ext_resource path="res://Screenshake.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Heart.gd" type="Script" id=5]
+[ext_resource path="res://materials/spriteOverride.tres" type="Material" id=6]
+[ext_resource path="res://sprites/heartPlanetCuore.png" type="Texture" id=7]
+[ext_resource path="res://Lifebar.gd" type="Script" id=8]
+[ext_resource path="res://sprites/purplecircle.png" type="Texture" id=9]
+[ext_resource path="res://sprites/pinkcircle.png" type="Texture" id=10]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://CurveDraw.gd" type="Script" id=12]
 
 [sub_resource type="PlaneMesh" id=1]
-size = Vector2( 200, 180 )
+size = Vector2( 300, 300 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 100, 1, 63 )
@@ -74,7 +75,7 @@ shape = SubResource( 2 )
 mesh_library = ExtResource( 3 )
 cell_size = Vector3( 16, 16, 16 )
 data = {
-"cells": PoolIntArray( 0, 4, 1, 1, 4, 1, 2, 4, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 6, 4, 1, 65529, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 1, 65535, 4, 1, 0, 5, 1, 1, 5, 1, 2, 5, 1, 3, 5, 1, 4, 5, 1, 5, 5, 1, 6, 5, 1, 65529, 5, 1, 65530, 5, 536870913, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 0, 65530, 1, 1, 65530, 1, 2, 65530, 1, 3, 65530, 536870913, 4, 65530, 1, 5, 65530, 1, 6, 65530, 1, 65529, 65530, 1, 65530, 65530, 1, 65531, 65530, 1, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 536870913, 1, 65531, 1, 2, 65531, 1, 3, 65531, 1, 4, 65531, 1, 5, 65531, 1, 6, 65531, 1, 65529, 65531, 1, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1 )
+"cells": PoolIntArray( 0, 4, 1, 1, 4, 1, 2, 4, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 6, 4, 1, 65529, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 1, 65535, 4, 1, 0, 5, 1, 1, 5, 1, 2, 5, 1, 3, 5, 1, 4, 5, 1, 5, 5, 1, 6, 5, 1, 65529, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 0, 65530, 1, 1, 65530, 1, 2, 65530, 1, 3, 65530, 1, 4, 65530, 1, 5, 65530, 1, 6, 65530, 1, 65529, 65530, 1, 65530, 65530, 1, 65531, 65530, 1, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 1, 1, 65531, 1, 2, 65531, 1, 3, 65531, 1, 4, 65531, 1, 5, 65531, 1, 6, 65531, 1, 65529, 65531, 1, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1 )
 }
 __meta__ = {
 "_editor_clip_": 0
@@ -91,9 +92,11 @@ size = 150.0
 near = 0.01
 far = 600.0
 
+[node name="Screenshake" parent="CameraPivot/MainCamera" instance=ExtResource( 4 )]
+
 [node name="Heart" type="StaticBody" parent="."]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 49.9454, 6, -7.12974 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Heart"]
 shape = SubResource( 3 )
@@ -107,14 +110,14 @@ shape = SubResource( 3 )
 
 [node name="HeartSprite" type="Sprite3D" parent="Heart"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0 )
-material_override = ExtResource( 5 )
-texture = ExtResource( 6 )
+material_override = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Lifebar" type="Sprite3D" parent="Heart"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0 )
 material_override = SubResource( 4 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Viewport" type="Viewport" parent="Heart/Lifebar"]
 size = Vector2( 1024, 1024 )
@@ -128,8 +131,8 @@ margin_right = 1024.0
 margin_bottom = 1024.0
 max_value = 10000.0
 value = 10000.0
-texture_under = ExtResource( 8 )
-texture_progress = ExtResource( 9 )
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
 fill_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -145,13 +148,13 @@ process_mode = 0
 wait_time = 0.01
 autostart = true
 
-[node name="UI" parent="." instance=ExtResource( 10 )]
+[node name="UI" parent="." instance=ExtResource( 11 )]
 
 [node name="Path" type="Path" parent="."]
 curve = SubResource( 6 )
 
 [node name="CurveDraw" type="ImmediateGeometry" parent="Path"]
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="NextWaveTimer" type="Timer" parent="."]
 process_mode = 0

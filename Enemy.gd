@@ -26,7 +26,7 @@ func get_class():
 func _ready():
 	$EnemyArea.monitorable = false
 	self.offset = 0
-	self.life += floor((self.get_parent().get_parent().wave * self.lifeScalingFactor))
+	self.life += floor((1.25 * self.get_parent().get_parent().wave * self.lifeScalingFactor))
 	self.value += floor(0.5 * self.get_parent().get_parent().wave)
 
 func _process(delta):

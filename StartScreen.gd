@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	Preloader.get_node("MusicPlayer").playing = false
+
 func _on_MenuButton_pressed():
 	$CourseSelect.visible = true
 	Preloader.get_node("SoundEffects/ConfirmSound").play()
