@@ -4,7 +4,7 @@ A simple tower defense game in Godot.
 # Credits
 Enter Command font used in this program is made by jeti https://fontenddev.com/fonts/enter-command/
 
-Gooey font used in dhis program is made by Dreadful Productions https://www.dafont.com/pt/gooey.font
+Gooey font used in this program is made by Dreadful Productions https://www.dafont.com/pt/gooey.font
 
 Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other sprites used in this program are from the PIXEL ART METROIDVANIA ASSET PACK by o_lobster. This project does not contain the entire asset pack. https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack
 
@@ -21,3 +21,5 @@ Butterfly sprite from the Forest Monster sprite pack by Calciumtrice. This proje
 Heroic Asset Series Creature Pack used in this program is made by Aleksandr Makarov. This project does not contain the entire asset pack. https://iknowkingrabbit.itch.io/heroic-creature-pack
 
 Fire Elemental sprite by Ahmet Avci (OpenGameArt user Elthen). Patreon page: https://www.patreon.com/elthen https://opengameart.org/content/pixel-art-fire-elemental-sprites
+
+8-Bit SFX library used in this program is made by Beep Yeah!. This project does not contain the entire asset pack. https://beepyeah.itch.io/8-bit-sfx-pack
