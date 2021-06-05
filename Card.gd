@@ -29,3 +29,5 @@ func button_enable():
 func _on_Button_pressed():
 	if (get_parent().get_parent().get_parent().resource) >= self.towerCost:
 		get_parent().get_parent().place_mode(self)
+	else:
+		Preloader.get_node("SoundEffects/CancelSound").play()

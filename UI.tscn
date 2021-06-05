@@ -39,7 +39,6 @@ __meta__ = {
 }
 
 [node name="CardContainer" type="HBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 376.0
@@ -313,7 +312,6 @@ value = -15.0
 ticks_on_borders = true
 
 [node name="VolumeControl2" type="NinePatchRect" parent="SettingsMenu/SettingsRectangle"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

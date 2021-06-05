@@ -11,7 +11,8 @@
 [ext_resource path="res://sprites/purplecircle.png" type="Texture" id=9]
 [ext_resource path="res://sprites/pinkcircle.png" type="Texture" id=10]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=11]
-[ext_resource path="res://CurveDraw.gd" type="Script" id=12]
+[ext_resource path="res://courses/Yarn.tres" type="Curve3D" id=12]
+[ext_resource path="res://CurveDraw.gd" type="Script" id=13]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 300, 300 )
@@ -44,13 +45,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 3.25, 3.25, 1 ), Vector3( 3.5, 3.5, 1 ), Vector3( 3.25, 3.25, 1 ), Vector3( 3.5, 3.5, 1 ) ]
 }
-
-[sub_resource type="Curve3D" id=6]
-_data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -88.2723, 0, 44.8752, 20.2432, 0, 36.4829, -20.2432, 0, -36.4829, -88.2723, -7.62939e-006, -0.645631, -38.3289, 0, 42.6295, 38.3289, 0, -42.6295, 0.761137, -7.62939e-006, 0.0237904, 0, 0, 0, 0, 0, 0, 0.0917149, -7.62939e-006, 41.5281, 25.3726, 0, 23.9738, -25.3726, 0, -23.9738, -46.0986, -7.62939e-006, 41.5281, 33.3132, 7.62939e-006, 37.1642, -33.3132, -7.62939e-006, -37.1642, -33.1755, 0, -25.4362, -44.8057, 0, 34.4212, 44.8057, 0, -34.4212, 59.0011, 0, -46.8359, 48.2056, 0.00050354, 18.9662, -48.2056, -0.00050354, -18.9662, 60.8209, 0, 38.1621, 29.6576, 1.33514e-005, 7.14267, -29.6576, -1.33514e-005, -7.14267, 12.4552, 0, 39.1518, 0, 0, 0, 0, 0, 0, 24.4688, 0, -0.560848, 0, 0, 0, 0, 0, 0, 50.0522, 7.62939e-006, -10.8826 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
-}
-up_vector_enabled = false
 
 [node name="GameScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -151,10 +145,10 @@ autostart = true
 [node name="UI" parent="." instance=ExtResource( 11 )]
 
 [node name="Path" type="Path" parent="."]
-curve = SubResource( 6 )
+curve = ExtResource( 12 )
 
 [node name="CurveDraw" type="ImmediateGeometry" parent="Path"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="NextWaveTimer" type="Timer" parent="."]
 process_mode = 0

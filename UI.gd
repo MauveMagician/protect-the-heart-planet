@@ -10,6 +10,9 @@ onready var camera = get_parent().get_node("CameraPivot/MainCamera")
 func _ready():
 	$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)
 	$WaveMoneyRect/MoneyLabel.text = "MONEY " + String(get_parent().resource)
+	$SettingsMenu/SettingsRectangle/VolumeControl/HSlider.value = Preloader.get_node("MusicPlayer").volume_db
+	$SettingsMenu/SettingsRectangle/SFXVolumeControl/SFX_HSlider.value = Preloader.get_node("SoundEffects").get_child(0).volume_db
+	$SettingsMenu/SettingsRectangle/VolumeControl2/CheckButton.pressed = AudioServer.is_bus_mute(AudioServer.get_bus_index("Master"))
 
 func place_mode(tower_card):
 	var tower = tower_card.tower
@@ -69,9 +72,6 @@ func _on_HSlider_value_changed(value):
 
 func _on_HSlider_mouse_exited():
 	$SettingsMenu/SettingsRectangle/VolumeControl/HSlider.release_focus()
-
-func _on_CheckButton_button_up():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
 
 func _on_CheckButton_toggled(button_pressed):
 	Preloader.get_node("SoundEffects/ConfirmSound").play()

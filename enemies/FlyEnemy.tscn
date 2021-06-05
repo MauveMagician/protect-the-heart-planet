@@ -5,7 +5,7 @@
 [ext_resource path="res://sprites/blue_fly_idle_or_flying_anim_strip_3.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 4, 4, 4 )
+extents = Vector3( 6, 6, 6 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "FlyEnemyAnim"
