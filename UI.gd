@@ -60,3 +60,19 @@ func _on_GameScene_wave_changed():
 	else:
 		$WaveMoneyRect/WaveLabel.text = "LEVEL " + String(get_parent().wave)
 
+func _on_HSlider_value_changed(value):
+	Preloader.get_node("MusicPlayer").volume_db = float(value)
+	print(Preloader.get_node("MusicPlayer").volume_db)
+
+func _on_HSlider_mouse_exited():
+	$SettingsMenu/SettingsRectangle/VolumeControl/HSlider.release_focus()
+
+func _on_CheckButton_button_up():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
+
+func _on_CheckButton_toggled(button_pressed):
+	var idx = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(idx, not AudioServer.is_bus_mute(idx))
+
+func _on_CheckButton_mouse_exited():
+	$SettingsMenu/SettingsRectangle/VolumeControl2/CheckButton.release_focus()

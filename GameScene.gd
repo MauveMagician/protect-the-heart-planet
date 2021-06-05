@@ -13,6 +13,8 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	get_tree().paused = false
 	rng.randomize()
+	Preloader.get_node("MusicPlayer").music_start()
+	
 
 func change_resource(value):
 	self.resource = value

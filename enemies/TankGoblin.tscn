@@ -37,7 +37,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 life = 6
-value = 5
 moveSpeed = 0.002
 lifeScalingFactor = 15.0
 

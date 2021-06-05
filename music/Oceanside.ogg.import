@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Oceanside.ogg-e3deea2e588eb759a66cf547be59c0b3.oggstr"
+
+[deps]
+
+source_file="res://music/Oceanside.ogg"
+dest_files=[ "res://.import/Oceanside.ogg-e3deea2e588eb759a66cf547be59c0b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

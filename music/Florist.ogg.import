@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Florist.ogg-38c2f5f3643efe9046089bf1bfe6007a.oggstr"
+
+[deps]
+
+source_file="res://music/Florist.ogg"
+dest_files=[ "res://.import/Florist.ogg-38c2f5f3643efe9046089bf1bfe6007a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

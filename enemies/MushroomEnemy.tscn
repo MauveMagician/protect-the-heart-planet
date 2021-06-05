@@ -39,7 +39,6 @@ __meta__ = {
 }
 heartDamage = 1500
 life = 4
-value = 3
 moveSpeed = 0.002
 lifeScalingFactor = 6.0
 

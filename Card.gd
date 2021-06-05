@@ -13,6 +13,7 @@ func _ready():
 	self.costMod = dummy_tower.costMod
 	$TowerCost.text = "$" + String(self.towerCost)
 	$UnitSpr.texture = dummy_tower.get_node("Thumbnail").texture
+	$Button.hint_tooltip = dummy_tower.description
 	call_deferred("queue_free",dummy_tower)
 
 func update_tower_cost(value):
