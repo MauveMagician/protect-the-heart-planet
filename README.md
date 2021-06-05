@@ -8,6 +8,8 @@ Gooey font used in dhis program is made by Dreadful Productions https://www.dafo
 
 Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other sprites used in this program are from the PIXEL ART METROIDVANIA ASSET PACK by o_lobster. This project does not contain the entire asset pack. https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack
 
+Amazing CC0 music by Tad Muller (from OpenGameArt page TAD https://opengameart.org/users/tad) https://www.youtube.com/c/Tadon
+
 Interface icons used in this program are by Kenney https://kenney.itch.io/kenney-game-assets-1
 
 Carrot sprite by palomaironique (Submitted to OpenGameArt by qubodup) https://opengameart.org/content/easter-carrot-pick-up-item
