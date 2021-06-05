@@ -32,8 +32,8 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Bunny"
-power = 5.0
-costMod = 1.75
+power = 10.0
+costMod = 2.0
 description = "Basic attack unit with fast attack speed and short range"
 
 [node name="AttackTimer" type="Timer" parent="."]

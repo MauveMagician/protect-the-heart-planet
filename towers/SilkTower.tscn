@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/butterfly-thumbnail.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 30, 30, 30 )
+extents = Vector3( 50, 50, 50 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 6, 6, 6 )
@@ -32,10 +32,10 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Silk"
-power = 10.0
+power = 20.0
 cost = 75
 costMod = 3.0
-description = "Short range. Foes shot are slowed."
+description = "Long range. Foes shot are slowed."
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0

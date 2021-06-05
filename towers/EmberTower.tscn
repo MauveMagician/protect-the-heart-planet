@@ -32,10 +32,10 @@ tracks/0/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 script = ExtResource( 1 )
 towerName = "Ember"
-power = 1.2
+power = 1.5
 cost = 10
-costMod = 5.0
-description = "Passive unit that increases the strength of ally projectiles that pass through them by 20%"
+costMod = 3.0
+description = "Passive unit that increases the strength of ally projectiles that pass through them by 50%"
 
 [node name="AttackTimer" type="Timer" parent="."]
 process_mode = 0

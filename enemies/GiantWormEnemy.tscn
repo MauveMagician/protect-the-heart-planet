@@ -36,7 +36,7 @@ heartDamage = 3000
 life = 500
 value = 10
 moveSpeed = 0.002
-lifeScalingFactor = 500.0
+lifeScalingFactor = 100.0
 
 [node name="EnemyArea" type="Area" parent="."]
 collision_layer = 3
