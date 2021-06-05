@@ -6,12 +6,13 @@ func _ready():
 func _on_MenuButton_pressed():
 	$CourseSelect.visible = true
 	Preloader.get_node("SoundEffects/ConfirmSound").play()
-	$BasicButtonsContainer.get_node("StartButtonRect/MenuButton").visible = false
+	$BasicButtonsContainer.visible = false
 
 func _on_BackButton_pressed():
 	$CourseSelect.visible = false
+	$Credits.visible = false
 	Preloader.get_node("SoundEffects/CancelSound").play()
-	$BasicButtonsContainer.get_node("StartButtonRect/MenuButton").visible = true
+	$BasicButtonsContainer.visible = true
 
 func _on_SerpentineButton_pressed():
 	Preloader.playing_course_index = 3
@@ -39,3 +40,11 @@ func _on_ClassicButton_pressed():
 
 func _on_GithubButton_pressed():
 	OS.shell_open("https://github.com/MauveMagician/protect-the-heart-planet")
+
+func _on_CreditsButton_pressed():
+	$Credits.visible = true
+	Preloader.get_node("SoundEffects/ConfirmSound").play()
+	$BasicButtonsContainer.visible = false
+
+func _on_RichTextLabel_meta_clicked(meta):
+	OS.shell_open(meta)

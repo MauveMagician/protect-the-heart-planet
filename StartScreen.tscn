@@ -47,9 +47,9 @@ alignment = 1
 
 [node name="StartButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
 editor/display_folded = true
-margin_top = 42.0
+margin_top = 20.0
 margin_right = 178.0
-margin_bottom = 82.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 178, 40 )
 
 [node name="MenuButton" type="Button" parent="BasicButtonsContainer/StartButtonRect"]
@@ -60,9 +60,9 @@ text = "ENDLESS MODE"
 
 [node name="GithubButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
 editor/display_folded = true
-margin_top = 86.0
+margin_top = 64.0
 margin_right = 178.0
-margin_bottom = 126.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 178, 40 )
 
 [node name="GithubButton" type="LinkButton" parent="BasicButtonsContainer/GithubButtonRect"]
@@ -79,6 +79,26 @@ theme = ExtResource( 3 )
 enabled_focus_mode = 1
 text = "GITHUB PROJECT"
 
+[node name="CreditsButtonRect" type="NinePatchRect" parent="BasicButtonsContainer"]
+margin_top = 108.0
+margin_right = 178.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="CreditsButton" type="LinkButton" parent="BasicButtonsContainer/CreditsButtonRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -14.0
+margin_right = 47.0
+margin_bottom = 14.0
+focus_mode = 1
+theme = ExtResource( 3 )
+enabled_focus_mode = 1
+text = "CREDITS"
+
 [node name="CourseSelect" type="ColorRect" parent="."]
 editor/display_folded = true
 visible = false
@@ -93,6 +113,7 @@ margin_bottom = 96.0
 color = Color( 0.831373, 0.466667, 0.65098, 0.882353 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CourseSelect"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -105,6 +126,8 @@ margin_right = 89.0
 margin_bottom = 41.0
 theme = ExtResource( 3 )
 text = "SELECT COURSE"
+align = 1
+valign = 1
 
 [node name="GridContainer" type="GridContainer" parent="CourseSelect/NinePatchRect"]
 anchor_right = 1.0
@@ -199,8 +222,106 @@ margin_right = 178.0
 margin_bottom = 40.0
 theme = ExtResource( 3 )
 text = "BACK"
+
+[node name="Credits" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -296.0
+margin_top = -128.0
+margin_right = 288.0
+margin_bottom = 96.0
+color = Color( 0.831373, 0.466667, 0.65098, 0.882353 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Credits/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 13.0
+margin_right = 89.0
+margin_bottom = 41.0
+theme = ExtResource( 3 )
+text = "CREDITS"
+align = 1
+valign = 1
+
+[node name="BackButton" type="NinePatchRect" parent="Credits/NinePatchRect"]
+margin_left = 198.0
+margin_top = 176.0
+margin_right = 376.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 178, 40 )
+
+[node name="BackButton" type="Button" parent="Credits/NinePatchRect/BackButton"]
+margin_right = 178.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "BACK"
+
+[node name="ColorRect" type="ColorRect" parent="Credits/NinePatchRect"]
+margin_left = 8.0
+margin_top = 41.0
+margin_right = 576.0
+margin_bottom = 168.0
+color = Color( 0.25098, 0.25098, 0.25098, 0.501961 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/NinePatchRect/ColorRect"]
+margin_left = 8.0
+margin_right = 568.0
+margin_bottom = 127.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Enter Command font used in this program is made by jeti [url]https://fontenddev.com/fonts/enter-command/[/url]
+
+Gooey font used in this program is made by Dreadful Productions [url]https://www.dafont.com/pt/gooey.font[/url]
+
+Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other sprites used in this program are from the PIXEL ART METROIDVANIA ASSET PACK by o_lobster. This project does not contain the entire asset pack. [url]https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack[/url]
+
+CC0 Lofi music collection used (and shared converted to OGG) in this program by Tad Miller [url]https://opengameart.org/content/lofi-compilation https://www.youtube.com/c/Tadon[/url]
+
+Interface icons used in this program are by Kenney [url]https://kenney.itch.io/kenney-game-assets-1[/url]
+
+Carrot sprite by palomaironique (Submitted to OpenGameArt by qubodup) [url]https://opengameart.org/content/easter-carrot-pick-up-item[/url]
+
+Rose Flower sprite modified from OpenGameArt user Lovecraft [url]https://opengameart.org/content/rose-flower-pyxeledit-document-and-image[/url]
+
+Butterfly sprite from the Forest Monster sprite pack by Calciumtrice. This project does not contain the entire asset pack. [url]https://opengameart.org/content/forest-monsters[/url]
+
+Heroic Asset Series Creature Pack used in this program is made by Aleksandr Makarov. This project does not contain the entire asset pack. [url]https://iknowkingrabbit.itch.io/heroic-creature-pack[/url]
+
+Fire Elemental sprite by Ahmet Avci (OpenGameArt user Elthen). Patreon page: [url]https://www.patreon.com/elthen[/url] [url]https://opengameart.org/content/pixel-art-fire-elemental-sprites[/url]
+
+8-Bit SFX library used in this program is made by Beep Yeah!. This project does not contain the entire asset pack. [url]https://beepyeah.itch.io/8-bit-sfx-pack[/url]"
+text = "Enter Command font used in this program is made by jeti https://fontenddev.com/fonts/enter-command/
+
+Gooey font used in this program is made by Dreadful Productions https://www.dafont.com/pt/gooey.font
+
+Worm enemy, goblin enemy, mushroom enemy, bunny, flower, bird, bat and other sprites used in this program are from the PIXEL ART METROIDVANIA ASSET PACK by o_lobster. This project does not contain the entire asset pack. https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack
+
+CC0 Lofi music collection used (and shared converted to OGG) in this program by Tad Miller https://opengameart.org/content/lofi-compilation https://www.youtube.com/c/Tadon
+
+Interface icons used in this program are by Kenney https://kenney.itch.io/kenney-game-assets-1
+
+Carrot sprite by palomaironique (Submitted to OpenGameArt by qubodup) https://opengameart.org/content/easter-carrot-pick-up-item
+
+Rose Flower sprite modified from OpenGameArt user Lovecraft https://opengameart.org/content/rose-flower-pyxeledit-document-and-image
+
+Butterfly sprite from the Forest Monster sprite pack by Calciumtrice. This project does not contain the entire asset pack. https://opengameart.org/content/forest-monsters
+
+Heroic Asset Series Creature Pack used in this program is made by Aleksandr Makarov. This project does not contain the entire asset pack. https://iknowkingrabbit.itch.io/heroic-creature-pack
+
+Fire Elemental sprite by Ahmet Avci (OpenGameArt user Elthen). Patreon page: https://www.patreon.com/elthen https://opengameart.org/content/pixel-art-fire-elemental-sprites
+
+8-Bit SFX library used in this program is made by Beep Yeah!. This project does not contain the entire asset pack. https://beepyeah.itch.io/8-bit-sfx-pack"
 [connection signal="pressed" from="BasicButtonsContainer/StartButtonRect/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="BasicButtonsContainer/GithubButtonRect/GithubButton" to="." method="_on_GithubButton_pressed"]
+[connection signal="pressed" from="BasicButtonsContainer/CreditsButtonRect/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Classic/ClassicButton" to="." method="_on_ClassicButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Onslaught/OnslaughtButton" to="." method="_on_OnslaughtButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Simple/SimpleButton" to="." method="_on_SimpleButton_pressed"]
@@ -208,3 +329,5 @@ text = "BACK"
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Spiral/SpiralButton" to="." method="_on_SpiralButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/Serpentine/SerpentineButton" to="." method="_on_SerpentineButton_pressed"]
 [connection signal="pressed" from="CourseSelect/NinePatchRect/GridContainer/BackButton/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Credits/NinePatchRect/BackButton/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="meta_clicked" from="Credits/NinePatchRect/ColorRect/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
